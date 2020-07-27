@@ -13,6 +13,7 @@ Firmware for BigTreeTech's dual-mode touchscreen 3D printer controllers
 ## Table of Contents
 - [Menus and Themes](#menus-and-themes)
 - [Update TFT Firmware](#update-tft-firmware)
+- [Configuration](#configuration)
 - [Customization](#customization)
   - [Bootscreen and Icons](#bootscreen-and-icons)
   - [Firmware](#firmware)
@@ -46,6 +47,21 @@ Place SD card with `BIGTREE_TFT*_V*.*.*.bin` &amp; `TFT*` folder into the TFT's 
 
 <p align=center> ⚠️ Failing to update your icons &amp; fonts will result in missing icons and/or unreadable text ⚠️ </p>
 
+## Configuration
+The Firmware can be configured using the **config.ini** file from from one of these folders:
+[`Copy to SD Card root directory to update`](https://github.com/bigtreetech/BIGTREETECH-TouchScreenFirmware/tree/master/Copy%20to%20SD%20Card%20root%20directory%20to%20update) or
+[`Copy to SD Card root directory to update - Unified Menu Material theme`](https://github.com/bigtreetech/BIGTREETECH-TouchScreenFirmware/tree/master/Copy%20to%20SD%20Card%20root%20directory%20to%20update%20-%20Unified%20Menu%20Material%20theme)
+
+### Editing configuration (config.ini) file
+To edit the **config.ini** file follow the instruction here: [Detailed Instructions here](config_instructions.md)
+
+### Updating Firmware Configuration
+To update the Firmware configuration:
+1. Edit the settings in **config.ini**.
+2. Copy the **config.ini** file to the root of the SD card. (The SD card capacity should be less than or equal to 8GB and formatted as FAT32)
+3. Insert the SD card in the TFT's SD card slot and restart the TFT by pressing the reset buttion or disconnecting and connecting the power cable.
+4. The TFT will update and store the configuraiton form **config.ini** file.
+
 ## Customization
 
 ### Bootscreen and Icons
@@ -65,6 +81,7 @@ See [Customization guides](https://github.com/bigtreetech/BIGTREETECH-TouchScree
 ;BIGTREE_TFT35_V1_2
 ;BIGTREE_TFT35_V2_0
 ;BIGTREE_TFT35_V3_0
+;BIGTREE_TFT35_E3_V3_0
 ;BIGTREE_TFT28_V1_0
 ;BIGTREE_TFT28_V3_0
 ;BIGTREE_TFT24_V1_1

@@ -1,10 +1,11 @@
 #include "sw_spi.h"
+#include "delay.h"
 #include "GPIO_Init.h"
 
 void SW_SPI_Config(_SW_SPI *sw_spi, _SPI_MODE mode, u8 dataSize,
-uint16_t  cs, 
-uint16_t  sck, 
-uint16_t  miso, 
+uint16_t  cs,
+uint16_t  sck,
+uint16_t  miso,
 uint16_t  mosi)
 {
   sw_spi->cs = cs;
@@ -13,15 +14,15 @@ uint16_t  mosi)
   sw_spi->mosi = mosi;
   sw_spi->mode = mode;
   sw_spi->dataSize = dataSize;
-  
+
   GPIO_InitSet(sw_spi->cs, MGPIO_MODE_OUT_PP, 0);  //CS
   GPIO_InitSet(sw_spi->sck, MGPIO_MODE_OUT_PP, 0);  //SCK
   GPIO_InitSet(sw_spi->miso, MGPIO_MODE_IPN, 0);  //MISO
   GPIO_InitSet(sw_spi->mosi, MGPIO_MODE_OUT_PP, 0);  //MOSI
 }
 
-#define SCK_HIGH()      GPIO_SetLevel(sw_spi->sck, 1)
-#define SCK_LOW()       GPIO_SetLevel(sw_spi->sck, 0)
+#define SCK_HIGH()      GPIO_SetLevel(sw_spi->sck, 1); Delay_us(2) // The speed of xpt2046 should not be too fast
+#define SCK_LOW()       GPIO_SetLevel(sw_spi->sck, 0); Delay_us(2) // It is better to be below 200KHz.
 #define MOSI_WRITE(n)   GPIO_SetLevel(sw_spi->mosi, n)
 #define MISO_READ()     GPIO_GetLevel(sw_spi->miso)
 
