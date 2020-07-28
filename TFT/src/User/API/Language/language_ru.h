@@ -24,6 +24,7 @@
     #define RU_POINT_2                "Точка 2"
     #define RU_POINT_3                "Точка 3"
     #define RU_POINT_4                "Точка 4"
+    #define RU_POINT_5                "Точка 5"
     #define RU_ABL                    "ABL"
     #define RU_BLTOUCH_TEST           "BLT тест"
     #define RU_BLTOUCH_DEPLOY         "BLT вниз"
@@ -37,6 +38,7 @@
     #define RU_DEC                    "Уменьшить"
     #define RU_NOZZLE                 "Сопло"
     #define RU_BED                    "Стол"
+    #define RU_CHAMBER                "Chamber"
     #define RU_STOP                   "Стоп"
     #define RU_BACK                   "Назад"
     #define RU_PAGE_UP                "\u0899 Стр." //Left Arrow
