@@ -86,6 +86,7 @@ typedef struct
   uint16_t runout_noise_ms;
   uint8_t  runout_distance;
 
+  uint8_t  powerloss_en;
   uint8_t  powerloss_home;
   uint8_t  powerloss_invert;
   uint8_t  powerloss_z_raise;
@@ -99,6 +100,7 @@ typedef struct
   uint8_t   ext_count;
   uint8_t   fan_count;
   uint8_t   auto_load_leveling;
+  uint8_t   autoLevelState;
   uint8_t   onboardSD;
   uint8_t   m27_refresh_time;
   uint8_t   m27_active;
@@ -152,6 +154,7 @@ typedef struct
   uint8_t EEPROM;
   uint8_t autoReportTemp;
   uint8_t autoLevel;
+  uint8_t enableubl;
   uint8_t zProbe;
   uint8_t levelingData;
   uint8_t softwarePower;
