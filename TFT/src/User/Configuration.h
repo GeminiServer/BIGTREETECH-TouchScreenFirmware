@@ -14,7 +14,7 @@
  * ST7920_SPI // Marlin Mode
  * SERIAL_TSC // Touch Mode
  */
-#define DEFAULT_LCD_MODE SERIAL_TSC
+#define DEFAULT_LCD_MODE ST7920_SPI
 
 /**
  * Default Startup Knob LED Color (TFT35 E3)
@@ -25,7 +25,7 @@
  *
  * Default value is: 1 for LED_OFF
 */
-#define STARTUP_KNOB_LED_COLOR 0         // LED_OFF
+#define STARTUP_KNOB_LED_COLOR 2         // LED_OFF
 #define KEEP_KNOB_LED_COLOR_MARLIN_MODE  // Keeps the LED state in Marlin Mode
 
 /**
@@ -46,7 +46,7 @@
  */
 #define DEFAULT_LCD_BRIGHTNESS      10  // 10: LCD_100_PERCENT - Brightness value from list
 #define DEFAULT_LCD_IDLE_BRIGHTNESS 2   // 2: LCD_10_PERCENT - Brightness value from list
-#define DEFAULT_LCD_IDLE_TIMER      0   // 0: LCD_DIM_OFF
+#define DEFAULT_LCD_IDLE_TIMER      4   // 0: LCD_DIM_OFF
 #define LCD_DIM_CUSTOM_SECONDS      600 // Custom value in seconds. Will be used if LCD_DIM_CUSTOM_SECONDS is set as idle timer.
 
 //===========================================================================
@@ -62,7 +62,7 @@
  *          6: MAGENTA,    7: YELLOW,      8: ORANGE,  9: PURPLE,   10: LIME,  11: BROWN,
  *         12: DARKBLUE,  13: DARKGREEN,  14: GRAY,   15: DARKGRAY
  */
-#define ST7920_BKCOLOR 1
+#define ST7920_BKCOLOR 2
 #define ST7920_FNCOLOR 0
 
 /**
@@ -73,14 +73,14 @@
 /**
  *  show banner text at the top of the TFT in Marlin Mode.
  */
-#define ST7920_SHOW_BANNER true //to enabled: true | to disabled: false
+#define ST7920_SHOW_BANNER false //to enabled: true | to disabled: false
 /**
  * Run Marlin Mode in Fullscreen
  *
  *  Options:  0: Disabled. RECOMMENDED FOR TFT24
  *            1: Enabled Marlin Fullscreen mode.
  */
-#define DEFAULT_ST7920_FULLSCREEN_MODE 0 // 0: Disabled. RECOMMENDED FOR TFT24
+#define DEFAULT_ST7920_FULLSCREEN_MODE 1 // 0: Disabled. RECOMMENDED FOR TFT24
 
 /**
  * Keep Serial always On (ONLY SUPPORTED ON TFT24 V1.1, TFT35 V3.0, AND TFT28 V3.0)
@@ -91,7 +91,7 @@
  *
  *  Options:  0: Disabled    1: Enabled
  */
-#define SERIAL_ALWAYS_ON 0  // Default: 0 (Disabled)
+#define SERIAL_ALWAYS_ON 1  // Default: 0 (Disabled)
 
 //===========================================================================
 //========================== Touch Mode Settings ============================
@@ -106,7 +106,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 
 /**
  * Default Touch Mode Language
@@ -115,7 +115,7 @@
  *
  * Options: ARMENIAN, CHINESE, CZECH, DUTCH, ENGLISH, FRENCH, GERMAN, HUNGARIAN, ITALIAN, JAPANESE, POLISH, PORTUGUESE, RUSSIAN, SLOVAK, SPAIN
  */
-#define DEFAULT_LANGUAGE ENGLISH
+#define DEFAULT_LANGUAGE GERMAN
 
 /**
  *  Show bootscreen when starting up
