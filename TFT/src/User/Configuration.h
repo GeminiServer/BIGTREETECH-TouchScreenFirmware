@@ -151,7 +151,7 @@
 
 #define HOTEND_NUM   1    // set in 1~6
 #define EXTRUDER_NUM 1    // set in 1~6
-#define FAN_NUM      1    // set in 1~6
+#define FAN_NUM      2    // set in 1~6
 
 //                         PLA      PETG      ABS
 #define PREHEAT_LABELS   {"PLA", "PETG", "ABS", "TPU"}
@@ -167,9 +167,9 @@
 #define TOOL_CHANGE      {"T0",   "T1",      "T2",      "T3",      "T4",      "T5"}
 #define EXTRUDER_ID      {"E0",   "E1",      "E2",      "E3",      "E4",      "E5"}
 
-#define FAN_MAX_PWM      {255,       255,       255,       255,       255,       255}
-#define FAN_DISPLAY_ID   {"F0",      "F1",      "F2",      "F3",      "F4",      "F5"}
-#define FAN_CMD          {"M106 P0", "M106 P1", "M106 P2", "M106 P3", "M106 P4", "M106 P5" };
+#define FAN_MAX_PWM      {255,         255,      255,         255,         255,         255}
+#define FAN_DISPLAY_ID   {"F0",        "Ctrl",   "F2",        "F3",        "F4",        "F5"}
+#define FAN_CMD          {"M106 P0 S", "M710 I", "M106 P2 S", "M106 P3 S", "M106 P4 S", "M106 P5" };  // The the fan speed will be added without spaces to the Fan command. 
 
 #define SPEED_ID         {"Sp.", "Fr."}
 

@@ -71,7 +71,7 @@ void loopFan(void)
     if(send_waiting[curIndex] != true)
     {
     send_waiting[curIndex] = true;
-    storeCmd("%s S%d\n", fanCmd[curIndex], fanSpeed[curIndex]);
+    storeCmd("%s%d\n", fanCmd[curIndex], fanSpeed[curIndex]);
     }
   }
 }
