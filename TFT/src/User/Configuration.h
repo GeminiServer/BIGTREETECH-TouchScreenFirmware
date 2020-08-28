@@ -169,7 +169,7 @@
 
 #define HOTEND_NUM   1    // set in 1~6
 #define EXTRUDER_NUM 1    // set in 1~6
-#define FAN_NUM      2    // set in 1~6
+#define FAN_NUM      3    // set in 1~6
 
 #define PREHEAT_LABELS   {"PLA", "PETG", "ABS", "WOOD", "TPU", "NYLON"}
 #define PREHEAT_HOTEND   {200,   240,    230,   170,    220,   250}
@@ -184,9 +184,17 @@
 #define TOOL_CHANGE      {"T0",   "T1",      "T2",      "T3",      "T4",      "T5"}
 #define EXTRUDER_ID      {"E0",   "E1",      "E2",      "E3",      "E4",      "E5"}
 
-#define FAN_MAX_PWM      {255,         255,      255,         255,         255,         255}
-#define FAN_DISPLAY_ID   {"F0",        "Ctrl",   "F2",        "F3",        "F4",        "F5"}
-#define FAN_CMD          {"M106 P0 S", "M710 I", "M106 P2 S", "M106 P3 S", "M106 P4 S", "M106 P5" };  // The the fan speed will be added without spaces to the Fan command. 
+
+#define FAN_TYPE_F        0  // Default cooling fan
+#define FAN_TYPE_CTRL_S   1  // Controller FAN on Stepper/Bed On  (Check - Marlin M710)
+#define FAN_TYPE_CTRL_I   2  // Controller FAN on Idle            (Check - Marlin M710)
+#define FAN_TYPE_UNKNOWN  8  // Unknown / Not defined!
+#define FAN_MAX_PWM      {             255,             255,             255,             255,             255,             255,             255,             255 };
+//#define FAN_MIN_PWM      {               0,             20,               20,               0,               0,               0,               0,               0 };
+#define FAN_DISPLAY_ID   {            "F0",           "CtL",           "CtI",            "F1",            "F2",            "F3",            "F4",            "F5" };
+#define FAN_CMD          {       "M106 P0",          "M710",          "M710",       "M106 P1",       "M106 P2",       "M106 P3",       "M106 P4",       "M106 P5" };  // The the fan speed will be added without spaces to the Fan command. 
+#define FAN_TYPE         {      FAN_TYPE_F, FAN_TYPE_CTRL_S, FAN_TYPE_CTRL_I,      FAN_TYPE_F,      FAN_TYPE_F,      FAN_TYPE_F,      FAN_TYPE_F,      FAN_TYPE_F };
+//#define FAN_ENABLED      {            true,            true,            true,           false,           false,           false,          false,            false };
 
 #define SPEED_ID         {"Sp.", "Fr."}
 
@@ -244,7 +252,7 @@
  * Options:  0: Disabled    1: Enabled    2: Auto-detect [default]
  *
  */
-#define ENABLE_UBL_VALUE 2
+#define ENABLE_UBL_VALUE 1
 
 /**
  * Enable friendly probe offset language.
