@@ -81,7 +81,7 @@ void fanSpeedQuerySetWait(bool wait)
 
 void loopFan(void)
 {
-  for (uint8_t i = 0; i < infoSettings.fan_count + infoSettings.fan_ctrl_count; i++)
+  for (uint8_t i = 0; i < (infoSettings.fan_count + infoSettings.fan_ctrl_count); i++)
   {
     if (lastFanSpeed[i] != fanSpeed[i])
     {
