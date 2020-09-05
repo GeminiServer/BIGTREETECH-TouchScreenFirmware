@@ -31,11 +31,17 @@
         #error "STARTUP_knob_LED_COLOR cannot be greater than 9"
     #endif
   #else
+        #ifdef STARTUP_KNOB_LED_COLOR
+         #undef STARTUP_KNOB_LED_COLOR
+        #endif
         #define STARTUP_KNOB_LED_COLOR 0
   #endif
 
 #else
 
+    #ifdef STARTUP_KNOB_LED_COLOR
+      #undef STARTUP_KNOB_LED_COLOR
+    #endif
     #define STARTUP_KNOB_LED_COLOR 0
 
 #endif
