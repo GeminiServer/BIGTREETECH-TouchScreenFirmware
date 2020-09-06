@@ -18,32 +18,34 @@
     #ifdef CLEAN_MODE_SWITCHING_SUPPORT
     #error "CLEAN_MODE_SWITCHING_SUPPORT is now SERIAL_ALWAYS_ON. Please update your configuration."
     #endif
+#else
+    #if defined(_PIN_TFT35_V2_0_H_) || defined(_PIN_TFT35_V1_0_H_)
+      #ifdef DEFAULT_LCD_MODE
+        #undef DEFAULT_LCD_MODE
+      #endif
+      #define DEFAULT_LCD_MODE SERIAL_TSC  // Just set hardcoded here. 
+    #endif
 #endif
 
+
+
 #ifdef LED_COLOR_PIN
-
-  #ifdef STARTUP_KNOB_LED_COLOR
-    #if STARTUP_KNOB_LED_COLOR < 0
-        #error "STARTUP_knob_LED_COLOR cannot be less than 1"
-    #endif
-
-    #if STARTUP_KNOB_LED_COLOR > 8
-        #error "STARTUP_knob_LED_COLOR cannot be greater than 9"
-    #endif
-  #else
-        #ifdef STARTUP_KNOB_LED_COLOR
-         #undef STARTUP_KNOB_LED_COLOR
+    #ifdef STARTUP_KNOB_LED_COLOR
+        #if STARTUP_KNOB_LED_COLOR < 0
+            #error "STARTUP_KNOB_LED_COLOR cannot be less than 1"
         #endif
+
+        #if STARTUP_KNOB_LED_COLOR > 8
+            #error "STARTUP_KNOB_LED_COLOR cannot be greater than 9"
+        #endif
+    #else
         #define STARTUP_KNOB_LED_COLOR 0
-  #endif
-
+    #endif
 #else
-
     #ifdef STARTUP_KNOB_LED_COLOR
       #undef STARTUP_KNOB_LED_COLOR
     #endif
     #define STARTUP_KNOB_LED_COLOR 0
-
 #endif
 
 #ifdef EXTRUDE_STEPS
